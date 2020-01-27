@@ -1,0 +1,15 @@
+<!--generate a link to index matching the URL pattern defined in feels_logs/urls.py-->
+<p>
+	<a href="{% url 'feels_logs:index' %}"> Log of many feels</a>
+	<a href="{% url 'feels_logs:events' %}">Events</a>
+	{% if user.is_authenticated %}
+		Hello, {{ user.username }}
+		<a href="{% url 'users:logout' %}">Log out</a>
+	{% else %}
+		<a href="{% url 'users:register' %}">Register</a>
+		<a href="{% url 'users:login' %}">Log in</a>
+	{% endif %}
+</p>
+
+<!--block tags. content will be a place holder for a child template-->
+{% block content %}{% endblock content %}

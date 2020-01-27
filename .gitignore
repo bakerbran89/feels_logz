@@ -1,0 +1,4 @@
+win_feels_env/
+feels_env/
+__pycache__/
+*.sqlite3

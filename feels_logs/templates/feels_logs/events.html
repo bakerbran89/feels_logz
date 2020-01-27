@@ -1,0 +1,20 @@
+{% extends "feels_logs/base.html" %}
+
+{% block page_header %}
+    <h1>Events</h1>
+{% endblock page_header %}
+
+{% block content %}
+	<ul>
+		{% for event in events %}
+			<li><h3>
+				<a href="{% url 'feels_logs:event' event.id %}">{{ event }}</a>
+			</h3></li>
+		{% empty %}
+			<li><h3>No events have been added yet.</h3></li>
+		{% endfor %}
+	</ul>
+	
+	<h3><a href="{% url 'feels_logs:new_event' %}">Add new event</a></h3>
+	
+{% endblock content %}
