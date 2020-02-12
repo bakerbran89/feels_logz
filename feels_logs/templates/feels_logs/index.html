@@ -5,7 +5,10 @@
 	<div class="jumbotron">
 		<h1 class="display-3">Feels Log</h1>
 		{% if user.is_authenticated %}
-			<p>Welcome in, {{ user.username }}.  What's the happs?</p>
+			<div>
+				<p>Welcome in, {{ user.username }}.  What's the happs?</p>
+				<a class="btn btn-lg btn-primary" href="{% url 'feels_logs:events' %}" role="button">Add new event &raquo;</a>
+			</div>
 		{% else %}
 			<p class="lead">Log your feelings regarding life events!  Update how you feel about these life events by adding entries as time passes.  Track how your feelings have changed over time!</p>
 			<a class="btn btn-lg btn-primary" href="{% url 'users:register' %}" role="button">Register &raquo;</a>
