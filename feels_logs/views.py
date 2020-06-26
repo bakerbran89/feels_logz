@@ -1,11 +1,11 @@
-# Create your views here.
+# Imports
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Event, Entry
 from .forms import EventForm, EntryForm
 from django.http import Http404
 
-# Create your views here.
+# Project views
 # Home page
 def index(request):
 	"""The home page for Feels Logs"""
