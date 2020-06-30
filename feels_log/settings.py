@@ -139,11 +139,11 @@ BOOTSTRAP4 = {
     # e.g. "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css",
     # or a dict like the default value below.
     "css_url": {
-        "href": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/lux/bootstrap.min.css",
-        "integrity": "sha384-smnSwzHqW1zKbeuSMsAM/fMQpkk7HY11LuHiwT8snL/W2QBoZtVCT4H5x1CEcJCs",
+        "href": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/yeti/bootstrap.min.css",
+        "integrity": "sha384-chJtTd1EMa6hQI40eyJWF6829eEk4oIe7b3nNtUni7VxA3uHc/uIM/8ppyjrggfV",
         "crossorigin": "anonymous",
     },
-
+    
     # The complete URL to the Bootstrap JavaScript file
     "javascript_url": {
         "url": "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js",
