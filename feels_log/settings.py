@@ -139,8 +139,8 @@ BOOTSTRAP4 = {
     # e.g. "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css",
     # or a dict like the default value below.
     "css_url": {
-        "href": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/sketchy/bootstrap.min.css",
-        "integrity": "sha384-NkI/Nlr1DZ5rUXWWdnuZb97FQRgCCcwC66DC+HUCY0oVx6BgBHUfPcwL1vwp93JZ",
+        "href": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/lux/bootstrap.min.css",
+        "integrity": "sha384-smnSwzHqW1zKbeuSMsAM/fMQpkk7HY11LuHiwT8snL/W2QBoZtVCT4H5x1CEcJCs",
         "crossorigin": "anonymous",
     },
 
