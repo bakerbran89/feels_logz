@@ -9,6 +9,8 @@
     
     <h5>Delete entry:</h5>
 
+    <p>Are you sure you want to delete this entry?</p>
+
     <form action ="{% url 'feels_logs:delete_entry' entry.id %}" method='POST' class="form">
 		{% csrf_token %}
 		{% bootstrap_form form %}
