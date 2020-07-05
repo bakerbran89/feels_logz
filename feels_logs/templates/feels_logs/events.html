@@ -8,7 +8,7 @@
 	<ul>
 		{% for event in events %}
 			<li style="list-style-type:none"><h6>
-				{{ event }} <a href="{% url 'feels_logs:event' event.id %}"><p>add new entry</p></a>
+				{{ event }} <a href="{% url 'feels_logs:event' event.id %}"><p>add new entry</p></a> 
 			</h6></li>
 		{% empty %}
 			<li><h3>No events have been added yet.</h3></li>

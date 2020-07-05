@@ -1,11 +1,11 @@
-# Create your views here.
-from django.shortcuts import render, redirect
+# Imports
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Event, Entry
 from .forms import EventForm, EntryForm
 from django.http import Http404
 
-# Create your views here.
+# Project views
 # Home page
 def index(request):
 	"""The home page for Feels Logs"""
@@ -91,7 +91,6 @@ def edit_entry(request, entry_id):
 	# Make sure the event belongs to the current user
 	check_topic_owner(request, event)
 
-	
 	if request.method != 'POST':
 		# initial request; pre-fill form with the current entry
 		form = EntryForm(instance=entry)
@@ -103,4 +102,23 @@ def edit_entry(request, entry_id):
 			return redirect('feels_logs:event', event_id=event.id)
 	context = {'entry': entry, 'event': event, 'form': form}
 	return render(request, 'feels_logs/edit_entry.html', context)
+
+@login_required #python decorator
+def delete_entry(request, entry_id):
+	"""delete an existing entry"""
+	entry = Entry.objects.get(id=entry_id)
+	event = entry.event
+
+	# Make sure the event belongs to the current user
+	check_topic_owner(request, event)
+	
+	if request.method != 'POST':
+		# initial request; pre-fill form with the current entry
+		form = EntryForm(instance=entry)
+	else:
+		# Delete data submitted; process data
+		entry.delete()
+		return redirect('feels_logs:event', event_id=event.id)
+	context = {'entry': entry, 'event': event, 'form': form}
+	return render(request, 'feels_logs/delete_entry.html', context)
 
