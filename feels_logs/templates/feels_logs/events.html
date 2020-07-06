@@ -5,16 +5,23 @@
 {% endblock page_header %}
 
 {% block content %}
-	<ul>
-		{% for event in events %}
-			<li style="list-style-type:none"><h6>
-				{{ event }} <a href="{% url 'feels_logs:event' event.id %}"><p>add new entry</p></a> 
-			</h6></li>
-		{% empty %}
-			<li><h3>No events have been added yet.</h3></li>
-		{% endfor %}
-	</ul>
-	
-	<h6><a href="{% url 'feels_logs:new_event' %}">Add new event</a></h6>
-	
+	<div class="container">
+		<ul class="list-group">
+			{% for event in events %}
+				<li style="list-style-type:none" class="list-group-item d-flex justify-content-between align-items-center">
+					<h4>{{ event }}</h4>
+					<span>
+						<a class="btn btn-outline-primary btn-sm" href="{% url 'feels_logs:event' event.id %}" role="button">Add new entry</a>
+						<!--<a class="btn btn-outline-danger btn-sm disabled" href="{% url 'feels_logs:event' event.id %}" role="button">Delete Event</a>-->
+					</span>
+				</li>
+			{% empty %}
+				<li><h3>No events have been added yet.</h3></li>
+			{% endfor %}
+		</ul>
+	</div>
+	<br>
+	<div class="container">
+		<a class="btn btn-primary btn-sm" href="{% url 'feels_logs:new_event' %}">Add new event</a>
+	</div>
 {% endblock content %}
