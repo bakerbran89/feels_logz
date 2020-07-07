@@ -12,7 +12,7 @@
 					<h4>{{ event }}</h4>
 					<span>
 						<a class="btn btn-outline-primary btn-sm" href="{% url 'feels_logs:event' event.id %}" role="button">Add new entry</a>
-						<!--<a class="btn btn-outline-danger btn-sm disabled" href="{% url 'feels_logs:event' event.id %}" role="button">Delete Event</a>-->
+						<a class="btn btn-outline-danger btn-sm" href="{% url 'feels_logs:delete_event' event.id %}" role="button">Delete Event</a>
 					</span>
 				</li>
 			{% empty %}

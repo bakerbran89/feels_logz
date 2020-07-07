@@ -122,3 +122,18 @@ def delete_entry(request, entry_id):
 	context = {'entry': entry, 'event': event, 'form': form}
 	return render(request, 'feels_logs/delete_entry.html', context)
 
+@login_required #python decorator	
+def delete_event(request, event_id):
+	"""Delete event - Show a single event and all its entires"""
+	event = Event.objects.get(id=event_id)
+	
+	# Make sure the event belongs to the current user
+	check_topic_owner(request, event)
+
+	entries = event.entry_set.order_by('-date_added')
+
+	context = {'event': event, 'entries': entries}
+
+	return render(request, 'feels_logs/delete_event.html', context)
+
+
