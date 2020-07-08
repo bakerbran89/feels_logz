@@ -131,9 +131,12 @@ def delete_event(request, event_id):
 	check_topic_owner(request, event)
 
 	entries = event.entry_set.order_by('-date_added')
-
 	context = {'event': event, 'entries': entries}
 
 	return render(request, 'feels_logs/delete_event.html', context)
+
+def leslie(request):
+	"""Secret Leslie Page"""
+	return render(request, 'feels_logs/leslie.html')
 
 
