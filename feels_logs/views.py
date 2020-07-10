@@ -124,20 +124,21 @@ def delete_entry(request, entry_id):
 
 @login_required #python decorator	
 def delete_event(request, event_id):
-	"""Delete event - Show a single event and all its entires"""
+	"""Delete event - Delete a single event and all its entires"""
 	event = Event.objects.get(id=event_id)
 	
 	# Make sure the event belongs to the current user
 	check_topic_owner(request, event)
+
+	#Gather event entries and order by date
 	entries = event.entry_set.order_by('-date_added')
-	
-	'''if request.method != 'POST':
-		return redirect('feels_logs:events')
-	else:
+
+	#Delete all entries and the event
+	if request.method == 'POST':
 		for entry in entries:
 			entry.delete()
-		#event.delete()
-		return redirect('feels_logs:events')'''
+		event.delete()
+		return redirect('feels_logs:events')
 
 	context = {'event': event, 'entries': entries}
 	return render(request, 'feels_logs/delete_event.html', context)
