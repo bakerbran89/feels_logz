@@ -129,14 +129,17 @@ def delete_event(request, event_id):
 	
 	# Make sure the event belongs to the current user
 	check_topic_owner(request, event)
-
 	entries = event.entry_set.order_by('-date_added')
+	
+	'''if request.method != 'POST':
+		return redirect('feels_logs:events')
+	else:
+		for entry in entries:
+			entry.delete()
+		#event.delete()
+		return redirect('feels_logs:events')'''
+
 	context = {'event': event, 'entries': entries}
-
 	return render(request, 'feels_logs/delete_event.html', context)
-
-def leslie(request):
-	"""Secret Leslie Page"""
-	return render(request, 'feels_logs/leslie.html')
 
 

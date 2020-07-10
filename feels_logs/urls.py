@@ -18,6 +18,5 @@ urlpatterns = [
 	#page for deleting an entry
 	path('delete_entry/<int:entry_id>', views.delete_entry, name='delete_entry'),
 	#page for deleting an event
-	path('delete_event/<int:event_id>', views.delete_event, name='delete_event'),
-	path('leslie/', views.leslie, name='leslie')
+	path('delete_event/<int:event_id>', views.delete_event, name='delete_event')
 ]
