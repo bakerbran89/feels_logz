@@ -1,3 +1,7 @@
 {
-    "python.pythonPath": "feels_env/bin/python3"
+<<<<<<< HEAD
+    "python.pythonPath": "/bin/python3"
+=======
+    "python.pythonPath": "C:\\Users\\bakes\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe"
+>>>>>>> 897664f176fb9b0671d75a68741e9e2d1f80ec92
 }

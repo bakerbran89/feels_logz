@@ -1,0 +1,31 @@
+{% extends "feels_logs/base.html" %}
+{% load bootstrap4 %}
+
+{% block page_header %}
+    <h3>{{ event }}</h3>
+{% endblock page_header %}
+
+{% block content %}
+    <h4>Delete event, "{{ event }}" ?</h4>
+	{% for entry in entries %}
+		<div class="card mb-3">
+			<h4 class="card-header">
+				{{ entry.date_added|date:'M d, Y H:i' }}
+			</h4>
+			<div class="card-body">
+				{{ entry.text|linebreaks }}
+			</div>
+		</div>
+	{% endfor %}
+
+	<form method='POST' action ="{% url 'feels_logs:delete_event' event.id%}" class="form">
+		{% csrf_token %}
+		{% buttons %}
+		Are you want to delete this event? 
+			<button name="submit" class="btn btn-sm btn-danger outline">Delete</button>
+			<a href="{% url 'feels_logs:events' %}">Cancel </a>
+		{% endbuttons %}
+	</form>
+
+
+{% endblock content %}
