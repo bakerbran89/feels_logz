@@ -1,6 +1,6 @@
-win_feels_env/
 feels_env/
 feelz_env/
+feelzenv/
 __pycache__/
 *.sqlite3
 secret_key.txt
