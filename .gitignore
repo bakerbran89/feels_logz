@@ -4,3 +4,4 @@ feelzenv/
 __pycache__/
 *.sqlite3
 secret_key.txt
+old_requirements.txt
