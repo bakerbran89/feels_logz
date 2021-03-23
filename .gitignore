@@ -5,3 +5,4 @@ __pycache__/
 *.sqlite3
 secret_key.txt
 old_requirements.txt
+requirements_old.txt
