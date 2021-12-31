@@ -3,14 +3,14 @@
 {% block page_header %}
 
 	<div class="jumbotron">
-		<h1 class="display-3">Feels Log</h1>
+		<h1 class="display-3">Events and Feelings</h1>
 		{% if user.is_authenticated %}
 			<div>
 				<p>Welcome in, {{ user.username }}.  What's the happs?</p>
 				<a class="btn btn-lg btn-primary" href="{% url 'feels_logs:events' %}" role="button">Add new event &raquo;</a>
 			</div>
 		{% else %}
-			<p class="lead">Log your feelings regarding life events!  Journal multiple life events.  Add multiple entries pertaining to each life event.  Track how your feelings have changed over time, regarding each event.</p>
+			<p class="lead">Log snapshots of your life events.  Track how your feelings have changed as each event progresses.</p>
 			<a class="btn btn-lg btn-primary" href="{% url 'users:register' %}" role="button">Register &raquo;</a>
 		{% endif %}
 	</div>
